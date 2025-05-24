@@ -17,6 +17,10 @@ Route::get('projects', function () {
     return Inertia::render('Projects/ProjectIndex');
 })->middleware(['auth', 'verified'])->name('projects');
 
+Route::get('workers', function () {
+    return Inertia::render('Workers/Index');
+})->middleware(['auth', 'verified'])->name('workers');
+
 Route::get('tasks', function () {
     return Inertia::render('Tasks/TaskIndex');
 })->middleware(['auth', 'verified'])->name('tasks');
