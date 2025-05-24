@@ -25,6 +25,9 @@ Route::get('tasks', function () {
     return Inertia::render('Tasks/TaskIndex');
 })->middleware(['auth', 'verified'])->name('tasks');
 
+Route::get('clients', function () {
+    return Inertia::render('Clients/ClientsIndex');
+})->middleware(['auth', 'verified'])->name('clients');
 
 
 

@@ -7,7 +7,9 @@ import { Head } from '@inertiajs/vue3';
 
 const showForm = ref(false);
 const form = ref({
-    name: '',
+    firstname: '',
+    middlename: '',
+    lastname: '',
     position: '',
     department: 'engineering',
     email: '',
@@ -26,7 +28,9 @@ function submitForm() {
         onSuccess: () => {
             showForm.value = false;
             form.value = {
-                name: '',
+                firstname: '',
+                middlename: '',
+                lastname: '',
                 position: '',
                 department: 'engineering',
                 email: '',
@@ -107,9 +111,25 @@ const breadcrumbs: BreadcrumbItem[] = [
                                 <form @submit.prevent="submitForm" class="space-y-5">
                                     <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
                                         <div class="space-y-1">
-                                            <label class="block text-sm font-medium text-gray-700">Full Name <span class="text-red-500">*</span></label>
+                                            <label class="block text-sm font-medium text-gray-700">First Name <span class="text-red-500">*</span></label>
                                             <input 
-                                                v-model="form.name" 
+                                                v-model="form.firstname" 
+                                                type="text" 
+                                                class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500" 
+                                                required 
+                                            />
+                                        </div><div class="space-y-1">
+                                            <label class="block text-sm font-medium text-gray-700">Middle Name <span class="text-red-500">*</span></label>
+                                            <input 
+                                                v-model="form.middlename" 
+                                                type="text" 
+                                                class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500" 
+                                                required 
+                                            />
+                                        </div><div class="space-y-1">
+                                            <label class="block text-sm font-medium text-gray-700">Last Name <span class="text-red-500">*</span></label>
+                                            <input 
+                                                v-model="form.lastname" 
                                                 type="text" 
                                                 class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500" 
                                                 required 
